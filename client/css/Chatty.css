@@ -1,0 +1,43 @@
+/* CSS declarations go here */
+.app-title
+{
+    font-size: 17px;
+}
+.user-img
+{
+    margin-right: 15px;
+}
+.text-msg
+{
+    width: auto;
+    height: auto;
+    margin: 5px 0px;
+    padding: 10px;
+
+    border-radius: 10px;
+    background-color: #1e88e5;
+}
+
+.text-msg.right
+{
+    border-top-right-radius: 3px;
+}
+
+.text-msg.left
+{
+    border-top-left-radius: 3px;
+}
+.chat-container
+{
+    overflow: auto;
+    overflow-y: scroll;
+
+    height: 400px;
+    /*padding: 5px;*/
+
+    background: white;
+}
+.send
+{
+    margin-top: 10px;
+}

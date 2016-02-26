@@ -1,0 +1,25 @@
+<template name="home">
+	{{#unless currentUser}}
+	<div class="card-content green">
+    	<span class="title white-text app-title" id="Title">
+    		{{> loginButtons}}
+    	</span>
+  	</div>
+	{{else}}
+		<div class="card-content green">
+			<span class="title white-text app-title">Chatty</span>
+			<span class="white-text right"><a href="home2"><i class="white-text material-icons">add</i></a>{{> loginButtons}}</span>
+		</div>
+		{{#each users}}
+			<a href="/chat/{{from}}">
+				<div class="card-content">
+					<img class="circle left user-img" width="50px;" height="50px;" src="image.jpg">
+					<span class="title chat-person">{{from}}</span>
+					<span class="title chat-person right black-text">{{formattedTime createdAt}}</span>
+					<p class="truncate black-text">{{content}}</p>
+				</div>
+				<li class="divider"></li>
+			</a>
+		{{/each}}
+	{{/unless}}
+</template>

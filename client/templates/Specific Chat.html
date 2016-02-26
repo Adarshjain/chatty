@@ -1,0 +1,39 @@
+<template name="specificChat">
+	{{#unless currentUser}}
+  <div class="card-content green">
+    <span class="title white-text app-title" id="Title">
+      {{> loginButtons}}
+    </span>
+  </div>
+	{{else}}
+  <div class="card-content green">
+    <span class="title white-text app-title" id="Title">
+      <a href="/"><i class="material-icons white-text left">arrow_back</i></a>
+      <img class="circle right materialboxed" width="45px;" height="45px;" src="../image.jpg">
+      {{userName}}
+    </span>
+  </div>
+  <div class="card-content chat-container white-text">
+  	{{#each Chats}}
+    <div class="col s10 l10 m10 {{#if isSender from}}offset-l2 offset-m2 offset-s2{{/if}}">
+  	  <div class="text-msg {{#if isSender from}}right{{else}}left{{/if}}">
+  	    <span>{{content}}</span>
+  	  </div>
+	</div>
+	{{/each}}
+  </div>
+  {{> inputSend}}
+  {{/unless}}
+</template>
+
+<template name="inputSend">
+  <form class="row sendmes">
+    <div class="input-field col s8 l8 m8 offset-s1 offset-l1 offset-m1">
+      <input type="text" id="textinput" name="message">
+      <label for="inputtext">Enter Message</label>
+    </div>
+    <div class="col l3 m3 s3">
+      <button type="submit" class="send green btn-floating btn-large"><i class="material-icons">send</i></button>
+    </div>
+  </form>
+</template>
